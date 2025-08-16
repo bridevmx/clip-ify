@@ -1,6 +1,6 @@
 {
   "name": "@bridevmx/clip-ify",
-  "version": "0.1.3",
+  "version": "0.1.5",
   "description": "A unofficial JavaScript client for the Clip API.",
   "main": "dist/index.js",
   "files": [

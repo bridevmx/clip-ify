@@ -129,12 +129,11 @@
  * @property {string} [error] - Error message if `success` is false.
  */
 
-
 /**
  * clip-ify is a client library for interacting with the Clip API.
  * It provides methods to fetch configuration, categories, products, and coupons.
  */
-class Clipify { 
+class Clipify {
     /**
      * Creates an instance of Clipify.
      * @param {ClipifyConfig} config - Configuration options for the client.
@@ -335,11 +334,18 @@ class Clipify {
     }
 }
 
-// Export the Clipify class
-if (typeof module !== 'undefined' && module.exports) {
-    // CommonJS (Node.js)
-    module.exports = Clipify;
-} else if (typeof window !== 'undefined') {
-    // Browser global
-    window.Clipify = Clipify;
-}
+// Exportación para compatibilidad universal
+(function (global, factory) {
+    if (typeof exports === 'object' && typeof module !== 'undefined') {
+        // CommonJS (Node.js)
+        module.exports = factory();
+    } else if (typeof define === 'function' && define.amd) {
+        // AMD (Asynchronous Module Definition)
+        define(factory);
+    } else {
+        // Browser global
+        global.Clipify = factory();
+    }
+}(typeof window !== 'undefined' ? window : this, function () {
+    return Clipify;
+}));
