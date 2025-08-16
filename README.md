@@ -24,9 +24,9 @@
 Puedes instalar `clip-ify` usando npm o yarn:
 
 ```bash
-npm install clip-ify
+npm i @bridevmx/clip-ify
 # o
-yarn add clip-ify
+yarn add @bridevmx/clip-ify
 ```
 
 ## Uso
