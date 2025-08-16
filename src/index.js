@@ -144,7 +144,7 @@ class Clipify { // La clase interna mantiene el nombre original, pero el paquete
         if (!config || !config.baseUrl) {
             throw new Error("clip-ify: 'baseUrl' must be provided in the configuration.");
         }
-        this.baseUrl = config.baseUrl;
+        this.baseUrl = config.baseUrl || "https://clip-ify.pockethost.io";
     }
 
     /**
