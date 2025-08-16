@@ -46,7 +46,7 @@ import Clipify from 'clip-ify';
 // const Clipify = window.Clipify; // Asumiendo que 'Clipify' es el nombre global expuesto
 
 const config = {
-    baseUrl: 'https://your-api-domain.com' // ¡Reemplaza con la URL de tu API!
+    baseUrl: 'https://your-api-domain.com' // ¡Reemplaza con la URL de tu API! (Opcional)
 };
 
 const clipClient = new Clipify(config);

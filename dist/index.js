@@ -1,13 +1,13 @@
 /**
  * @fileoverview clip-ify API client library.
- * @version 1.0.0
- * @author Your Name // ¡Asegúrate de cambiar esto!
+ * @version 0.1.3
+ * @author Brian Marquez Hernandez
  * @license MIT
  */
 
 /**
  * @typedef {object} ClipifyConfig
- * @property {string} baseUrl - The base URL of your API (e.g., "https://your-api-domain.com").
+ * @property {string} baseUrl - (Optional) The base URL of your API (e.g., "https://your-api-domain.com").
  */
 
 /**
@@ -134,17 +134,14 @@
  * clip-ify is a client library for interacting with the Clip API.
  * It provides methods to fetch configuration, categories, products, and coupons.
  */
-class Clipify { // La clase interna mantiene el nombre original, pero el paquete se llama clip-ify
+class Clipify { 
     /**
      * Creates an instance of Clipify.
      * @param {ClipifyConfig} config - Configuration options for the client.
      * @throws {Error} If baseUrl is not provided.
      */
     constructor(config) {
-        if (!config || !config.baseUrl) {
-            throw new Error("clip-ify: 'baseUrl' must be provided in the configuration.");
-        }
-        this.baseUrl = config.baseUrl;
+        this.baseUrl = config?.baseUrl || "https://clip-ify.pockethost.io";
     }
 
     /**
