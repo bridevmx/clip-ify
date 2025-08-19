@@ -33,23 +33,16 @@ yarn add @bridevmx/clip-ify
 
 ### Inicialización
 
-Primero, importa la clase `Clipify` (el nombre de la clase interna de la biblioteca) y crea una instancia. Necesitarás proporcionar la `baseUrl` de tu API (la URL donde está alojada tu API de Clip).
+Primero, importa la clase `Clipify` (el nombre de la clase interna de la biblioteca) y crea una instancia.
 
 ```javascript
 // En un entorno de módulo (Node.js, React, Vue, Angular, etc.)
-import Clipify from 'clip-ify';
+import Clipify from '@bridevmx/clip-ify';
 
-// O en CommonJS (Node.js)
-// const Clipify = require('clip-ify');
+//CDN
+<script src="http://unpkg.com/@bridevmx/clip-ify@latest"></script>
 
-// O si la incluyes directamente en un navegador (después de <script src="path/to/clip-ify.min.js"></script>)
-// const Clipify = window.Clipify; // Asumiendo que 'Clipify' es el nombre global expuesto
-
-const config = {
-    baseUrl: 'https://your-api-domain.com' // ¡Reemplaza con la URL de tu API! (Opcional)
-};
-
-const clipClient = new Clipify(config);
+const clipClient = new Clipify();
 ```
 
 ### Obtener Configuración de la Tienda
@@ -185,7 +178,6 @@ if (proxyMerchantToken) {
 Todos los métodos de `clip-ify` que realizan solicitudes de red son `async` y devuelven una `Promise`. Es crucial envolver las llamadas en bloques `try...catch` para manejar posibles errores de red, timeouts o respuestas de API con códigos de estado no exitosos.
 
 La biblioteca lanzará un `Error` si:
-*   La configuración inicial es inválida (ej. `baseUrl` faltante).
 *   Faltan parámetros requeridos en los métodos (ej. `shopName`, `proxyMerchantToken`).
 *   La solicitud de red falla (ej. problemas de conexión, timeout).
 *   La API de tu backend devuelve un código de estado HTTP no exitoso (4xx, 5xx). En este caso, el mensaje de error del `Error` contendrá el mensaje de la API si está disponible, o un mensaje genérico.

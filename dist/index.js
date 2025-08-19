@@ -334,18 +334,4 @@ class Clipify {
     }
 }
 
-// Exportación para compatibilidad universal
-(function (global, factory) {
-    if (typeof exports === 'object' && typeof module !== 'undefined') {
-        // CommonJS (Node.js)
-        module.exports = factory();
-    } else if (typeof define === 'function' && define.amd) {
-        // AMD (Asynchronous Module Definition)
-        define(factory);
-    } else {
-        // Browser global
-        global.Clipify = factory();
-    }
-}(typeof window !== 'undefined' ? window : this, function () {
-    return Clipify;
-}));
+export default Clipify;
